@@ -9,7 +9,7 @@ module.exports = {
     }
 
     const disabledLogger = function(method, args) {
-      console.log("Zendesk is disabled, you called:", { method, args });
+      console.log("Zendesk is disabled, you called:", method, args);
     };
 
     if (options.disabled) {
