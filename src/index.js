@@ -25,7 +25,7 @@ module.exports = {
     Vue._script.src =
       "https://static.zdassets.com/ekr/snippet.js?key=" + options.key;
 
-    Vue.load = () => {
+    Vue.load = function vueLoad() {
       delete window.zE;
       const first = document.getElementsByTagName("script")[0];
       first.parentNode.insertBefore(Vue._script, first);
@@ -53,20 +53,21 @@ module.exports = {
       }
     });
 
-    Vue.hide = () => window.zE("webWidget", "hide");
-    Vue.show = () => window.zE("webWidget", "show");
-    Vue.logout = () => window.zE("webWidget", "logout");
-    Vue.identify = user => window.zE("webWidget", "identify", user);
-    Vue.prefill = user => window.zE("webWidget", "prefill", user);
-    Vue.setLocale = locale => window.zE("webWidget", "setLocale", locale);
-    Vue.updateSettings = settings =>
+    Vue.hide = function vueHide() { window.zE("webWidget", "hide") };
+    Vue.show = function vueShow() { window.zE("webWidget", "show") };
+    Vue.logout = function vueLogout() { window.zE("webWidget", "logout") };
+    Vue.identify = function vueIdentify(user) { window.zE("webWidget", "identify", user)};
+    Vue.prefill = function vuePrefill(user) { window.zE("webWidget", "prefill", user)};
+    Vue.setLocale = function vueSetLocal(locale) { window.zE("webWidget", "setLocale", locale)};
+    Vue.updateSettings = function vueUpdateSettings(settings) {
       window.zE("webWidget", "updateSettings", settings);
-    Vue.clear = () => window.zE("webWidget", "clear");
-    Vue.updatePath = options => window.zE("updatePath", "clear", options);
-    Vue.toggle = () => window.zE("webWidget", "toggle");
-    Vue.reset = () => window.zE("webWidget", "reset");
-    Vue.close = () => window.zE("webWidget", "close");
-    Vue.open = () => window.zE("webWidget", "open");
+    }
+    Vue.clear = function vueClear() { window.zE("webWidget", "clear") };
+    Vue.updatePath = function vueUpdatePath(options) { window.zE("updatePath", "clear", options) };
+    Vue.toggle = function vueToggle() { window.zE("webWidget", "toggle") };
+    Vue.reset = function vueReset() { window.zE("webWidget", "reset") };
+    Vue.close = function vueClose() { window.zE("webWidget", "close") };
+    Vue.open = function vueOpen() { window.zE("webWidget", "open") };
 
     Object.defineProperty(Vue, "zE", {
       get() {
