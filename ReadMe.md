@@ -13,12 +13,12 @@ This plugin allows you to configure and add Zendesk Web Widget
 
 ## Setup
 
-1. Add the `@dansmaculotte/vue-zendesk` dependency with `yarn` or `npm` to your project
+1. Add the `vue-zendesk` dependency with `yarn` or `npm` to your project
 2. Configure it:
 
 ```js
 import Vue from 'vue'
-import Zendesk from '@dansmaculotte/vue-zendesk'
+import Zendesk from 'vue-zendesk'
 
 Vue.use(Zendesk, {
   key: 'YOUR_ZENDESK_KEY',
