@@ -32,18 +32,18 @@ module.exports = {
     };
 
     Vue.mixin({
-      created() {
+      created: function created() {
         if (!options.disabled) {
           Vue.load(options.key);
         }
 
         Vue._script.addEventListener("load", this.zendeskLoaded);
       },
-      destroyed() {
+      destroyed: function destroyed() {
         Vue._script.removeEventListener("load", this.zendeskLoaded);
       },
       methods: {
-        zendeskLoaded(event) {
+        zendeskLoaded: function zendeskLoaded(event) {
           this.$emit("zendeskLoaded", event);
 
           if (options.hideOnLoad) {
