@@ -1,5 +1,5 @@
 {
-  "name": "vue-zendesk",
+  "name": "@smartpath/vue-zendesk",
   "version": "0.3.6",
   "description": "Vue plugin for Zendesk Web Widget",
   "license": "MIT",
