@@ -70,7 +70,7 @@ module.exports = {
     Vue.open = function vueOpen() { window.zE("webWidget", "open") };
 
     Object.defineProperty(Vue, "zE", {
-      get() {
+      get: function get() {
         return window.zE;
       }
     });
