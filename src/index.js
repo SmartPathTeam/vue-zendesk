@@ -1,5 +1,5 @@
 module.exports = {
-  install(Vue, options = {}) {
+  install: function install(Vue, options = {}) {
     if (!options.disabled && (!options.key || options.key.length === 0)) {
       console.warn("Please enter a Zendesk Web Widget Key");
     }
