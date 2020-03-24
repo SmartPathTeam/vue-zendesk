@@ -8,7 +8,7 @@ module.exports = {
       console.warn("Please enter a Zendesk Web Widget Key");
     }
 
-    const disabledLogger = function(method, ...args) {
+    const disabledLogger = function(method, args) {
       console.log("Zendesk is disabled, you called:", { method, args });
     };
 
